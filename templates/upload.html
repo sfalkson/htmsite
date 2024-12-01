@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Hello, {{ name }}!</h1>
-    <form action="/upload" method="post">
-        Describe something for ChatGPT to respond to:
-        <input type="text" name="description" placeholder="Enter your description">
-        <input type="submit" value="Get Response">
-    </form>
+    <div class="container">
+        <h1>Hello, {{ name }}!</h1>
+        <form action="/upload" method="post">
+            <label for="description">How are you feeling today?</label>
+            <input type="text" name="description" id="description" class="description-input" placeholder="I am feeling...">
+            <input type="submit" value="Get Response">
+        </form>
+    </div>
 </body>
 </html>
