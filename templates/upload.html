@@ -2,30 +2,13 @@
 <html>
 <head>
     <title>Upload Page</title>
-    <script>
-        function previewFile() {
-            const preview = document.getElementById('image-preview');
-            const file = document.querySelector('input[type=file]').files[0];
-            const reader = new FileReader();
-
-            reader.addEventListener("load", function () {
-                // Convert image file to base64 string and display it
-                preview.src = reader.result;
-            }, false);
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
 </head>
 <body>
     <h1>Hello, {{ name }}!</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        Please upload a PNG file:
-        <input type="file" name="file" onchange="previewFile()">
-        <img id="image-preview" src="#" alt="Image preview..." style="max-width: 300px; max-height: 300px;">
-        <input type="submit" value="Upload">
+    <form action="/upload" method="post">
+        Describe something for ChatGPT to respond to:
+        <input type="text" name="description" placeholder="Enter your description">
+        <input type="submit" value="Get Response">
     </form>
 </body>
 </html>
