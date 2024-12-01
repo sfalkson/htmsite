@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload File and Get Insights</title>
+    <title>Home Page</title>
 </head>
 <body>
-    <h1>Upload your file</h1>
-    <form id="uploadForm" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" id="file">
-        <button type="button" onclick="uploadFile()">Upload for Sara here!! </button>
+    <form action="/" method="post">
+        Enter your name: <input type="text" name="name">
+        <input type="submit" value="Submit">
     </form>
-    <div id="result"></div>
-
-    <script>
-        function uploadFile() {
-            var formData = new FormData(document.getElementById('uploadForm'));
-            fetch('/upload', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = data.insights || data.error;
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
 </body>
 </html>
